@@ -9,7 +9,7 @@ import java.util.Optional;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 @Repository
-public interface AdotanteRepository extends JpaRepository<Long, Adotante>{
+public interface AdotanteRepository extends JpaRepository<Adotante, Long>{
 
     Optional<Adotante> findById(Long id);
 

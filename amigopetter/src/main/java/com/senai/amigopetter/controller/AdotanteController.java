@@ -2,7 +2,7 @@ package com.senai.amigopetter.controller;
 
 import java.util.List;
 
-import org.apache.el.stream.Optional;
+import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -27,12 +27,12 @@ public ResponseEntity<Adotante> cadastrarAdotante(@RequestBody Adotante adotante
    return ResponseEntity.ok(novoAdotante);
 }
 @GetMapping
-public ResponseEntity<List<Long>> listarAdotantes() {
-    List<Long> adotantes=adotanteServices.listarTodos();
+public ResponseEntity<List<Adotante>> listarAdotantes() {
+    List<Adotante> adotantes=adotanteServices.listarTodos();
     return ResponseEntity.ok(adotantes);
 }
 @GetMapping("/{id}")
-public ResponseEntity<Adotante> buscarAdotantePorId(@PathVariable Long id) {
+public ResponseEntity<Optional<Adotante>> buscarAdotantePorId(@PathVariable Long id) {
     Optional<Adotante> adotante=adotanteServices.buscarPorId(id);
     return ResponseEntity.ok(adotante);
 }
