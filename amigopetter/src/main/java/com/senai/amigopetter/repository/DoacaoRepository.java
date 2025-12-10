@@ -5,6 +5,6 @@ import org.springframework.stereotype.Repository;
 import com.senai.amigopetter.models.Doadores;
 
 @Repository
-public interface LoacaoRepository extends JpaRepository<Doadores,Long>{
+public interface DoacaoRepository extends JpaRepository<Doadores,Long>{
 
 }

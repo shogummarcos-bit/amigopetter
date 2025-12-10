@@ -1,43 +1,45 @@
 package com.senai.amigopetter.models;
 
-import org.springframework.boot.autoconfigure.condition.ConditionalOnNotWarDeployment;
-
+import java.time.LocalDate;
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Entity
-@table(name="Doador")
+@Table(name="Doador")
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
 public class Doadores {
     @Id
-@GeneratebVaue(strategy=GenerationType.IDENTITY)
+@GeneratedValue(strategy=GenerationType.IDENTITY)
 private Long id;
-@ConditionalOnNotWarDeployment
-privat String nome;
+@Column
+private String nome;
 
-@ConditionalOnNotWarDeployment
-privat String cpf ;
+@Column
+private String cpf ;
 
-@ConditionalOnNotWarDeployment
-privat String telefone;
+@Column
+private String telefone;
 
-@ConditionalOnNotWarDeployment
-privat String r=email;
+@Column
+private String email;
 
-@ConditionalOnNotWarDeployment
-privat LocalDate data_Registro;
+@Column
+private LocalDate data_Registro;
 
-@ConditionalOnNotWarDeployment
-privat LocalDate data_atualisacao;
+@Column
+private LocalDate data_atualisacao;
 
-@ConditionalOnNotWarDeployment
-privat LocalDate dat_Nascimento;
+@Column
+private LocalDate dat_Nascimento;
 }

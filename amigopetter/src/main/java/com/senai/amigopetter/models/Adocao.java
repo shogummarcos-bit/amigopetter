@@ -1,5 +1,6 @@
 package com.senai.amigopetter.models;
 
+import java.time.LocalDate;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -12,25 +13,24 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Entity
-@Table(name="login")
+@Table(name="adocao")
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class Login {
-
-@Id
+public class Adocao {
+    @Id
 @GeneratedValue(strategy=GenerationType.IDENTITY)
 private Long id;
 @Column
-private String usuario;
+private Adotante adotante;
 
 @Column
-private String email;
+private Pets pet ;
 
 @Column
-private String telefone;
+private Doadores doador ;
 
 @Column
-private String senha;
+private LocalDate data_adocao;
 }

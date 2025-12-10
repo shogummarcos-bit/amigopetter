@@ -1,5 +1,19 @@
 package com.senai.amigopetter.controller;
 
+import java.util.List;
+
+import org.apache.el.stream.Optional;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.senai.amigopetter.models.Adotante;
+import com.senai.amigopetter.service.AdotanteServices;
 
 @RestController
 @RequestMapping("/api/adotante")
@@ -13,8 +27,8 @@ public ResponseEntity<Adotante> cadastrarAdotante(@RequestBody Adotante adotante
    return ResponseEntity.ok(novoAdotante);
 }
 @GetMapping
-public ResponseEntity<List<Adotante>> listarAdotantes() {
-    List<Adotante> adotantes=adotanteServices.listarTodos();
+public ResponseEntity<List<Long>> listarAdotantes() {
+    List<Long> adotantes=adotanteServices.listarTodos();
     return ResponseEntity.ok(adotantes);
 }
 @GetMapping("/{id}")

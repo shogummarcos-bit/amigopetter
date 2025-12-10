@@ -4,9 +4,13 @@ import org.springframework.stereotype.Repository;
 
 import com.senai.amigopetter.models.Adotante;
 
+import java.util.Optional;
+
 import org.springframework.data.jpa.repository.JpaRepository;
 
 @Repository
-public class AdotanteRepository extends JpaRepository<Adotante,Long>{
+public interface AdotanteRepository extends JpaRepository<Long, Adotante>{
+
+    Optional<Adotante> findById(Long id);
 
 }

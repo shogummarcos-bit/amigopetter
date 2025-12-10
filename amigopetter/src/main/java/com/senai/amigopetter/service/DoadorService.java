@@ -10,20 +10,21 @@ import com.senai.amigopetter.models.Pets;
 import com.senai.amigopetter.repository.PetsRepository;
 
 @Service
-public class PetsServices {
+public class DoadorService {
 @Autowired
-private PetsRepository petRepository;
-public Pets adicionarPets(Pets pet){
-    return petRepository.save(pet);
 
+private PetsRepository petRepository;
+public Pets cadastrarPet(Pets pet){
+    return petRepository.save(pet);
 }
-public List<Pets> listarTodos(){
+public List<Pets> listarPet(){
     return petRepository.findAll();
 }
-public Optional<Pets> buscarPorId(Long id){
+public Optional<Pets> BuscorPetPorID(Long id){
     return petRepository.findById(id);
 }
-public List<Pets> listarDisponivel(){
-    return petRepository.findByDisponivelTrue();
+public void removerPet(Long id){
+    petRepository.deleteById(id);
+
 }
 }
