@@ -26,7 +26,7 @@ public class AdocaoController {
 @Autowired
 private AdocaoService adocaoService;
 @PostMapping
-public ResponseEntity<Adocao> criaradocao(@RequestBody Adocao adocao){
+public ResponseEntity<Adocao> criarAdocao(@RequestBody Adocao adocao){
     Adocao novaAdocao=adocaoService.criarAdocao(adocao);
     return ResponseEntity.ok(novaAdocao);
 }
@@ -35,18 +35,21 @@ public List<Adocao> listartodasAdocao() {
     return adocaoService.listartodasAdocao();
 }
 @GetMapping("/{id}")
-public ResponseEntity<Adocao> buscarAdocaoPOorId(@PathVariable Long id){
+public ResponseEntity<Adocao> buscarAdocaoPorId(@PathVariable Long id){
     Adocao adocao=adocaoService.buscarAdocaoPorId(id);
     return ResponseEntity.ok(adocao);
 }
 @PutMapping("/{id}")
-public  ResponseEntity<Adocao> atualizarAdocao(@PathVariable Ling id, @RequestBody Adocao adocaoDetails {
-    Adocao adocaoAtualizada=adocaoService(id,adocaoDetails):
+public  ResponseEntity<Adocao> atualizarAdocao(@PathVariable Long id, @RequestBody Adocao adocaoDetails) {
+    Adocao adocaoAtualizada=adocaoService(id,adocaoDetails);
     return ResponseEntity.ok(adocaoAtualizada);
+}
+private Adocao adocaoService(Long id, Adocao adocaoDetails) {
+    throw new UnsupportedOperationException("Unimplemented method 'adocaoService'");
 }
 @DeleteMapping("/ìd}")
 public ResponseEntity<Void> removerAdocao(@PathVariable Long id){
-    adocaoService.removerAdocoa(id);
+    adocaoService.removerAdocao(id);
     return (ResponseEntity<Void>) ResponseEntity.ok();
 }
 @GetMapping("/{status}")
